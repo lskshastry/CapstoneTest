@@ -1,0 +1,107 @@
+<html>
+    <head>
+      <head>
+    
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+      
+
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+      <!-- font-family: 'Poppins', sans-serif;     light -->
+
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+      <!-- font-family: 'Poppins', sans-serif;     regular -->
+
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+      <!-- font-family: 'Poppins', sans-serif;     semibold -->
+
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+      <!-- font-family: 'Poppins', sans-serif;     bold -->
+
+       {% if title %}
+          <title>{{ title }} </title>
+       {% else %}
+          <title> Welcome to the Mindful Portal! </title>
+       {% endif %}
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+       {{ moment.include_moment() }}
+
+
+    </head>
+
+    <body>
+      <div class = "wrapper">
+         <div class ="nav-container">
+            <table>
+                  <nav>
+                     <ul>
+
+
+                        {% if current_user.admin==0%}
+
+                           <!-- add mindful logo as dropdown menu -->
+                           <!-- <div class="nav_info">
+                              <button class="dropdown_button"><img src = "{{ url_for('static', filename = 'img//dropdown_icon.png' )}}" alt = "dropdown_icon" class = "dropdown_icon"
+                                 width = 35px></button>
+                              <div class="dropdown-content">
+                                 <a href="{{ url_for('routes.index') }}" class = "navbutton">Home</a>
+                                 <a href="{{ url_for('routes.situation_category') }}" class = "navbutton"> Survey</a>
+                                 <a href="{{ url_for('auth.logout')}}" class = "navbutton"> Logout</a>
+                              </div>
+                            </div> -->
+
+                            <li><a href="{{ url_for('routes.index') }}" class = "navbutton" style="text-decoration: none;">Home</a></li>
+                            <!-- <li><a href="{{ url_for('routes.situation_category') }}" class = "navbutton" style="text-decoration: none;">Journal Entry</a></li> -->
+                            <!-- <li><a href="{{ url_for('auth.login')}}" class = "navbutton"> Login </a></li> -->
+                            <li><a href="{{ url_for('auth.logout')}}" class = "navbutton" style="text-decoration: none;"> Logout</a></li>
+
+                            <!-- add mindful logo -->
+                           <img src = "{{ url_for('static', filename = 'img//Mindful_logo_blue.png' )}}" alt = "nav_logo" class = "nav_logo">
+
+                           {%endif%}
+
+                           {% if current_user.admin==1%}
+
+                           <!-- add mindful logo as dropdown menu -->
+                           <!-- <div class="dropdown">
+                              <button class="dropdown_button"><img src = "{{ url_for('static', filename = 'img//dropdown_icon.png' )}}" alt = "dropdown_icon" class = "dropdown_icon"
+                                 width = 40px></button>
+                              <div class="dropdown-content">
+                                 <li><a href="{{ url_for('routes.index') }}" class = "navbutton">Home</a></li>
+                                 <li><a href="{{ url_for('routes.qsort') }}" class = "navbutton"> qsort </a></li>
+                                 <li><a href="{{ url_for('auth.logout')}}" class = "navbutton"> Logout</a></li>
+                              </div>
+                            </div> -->
+
+                            <li><a href="{{ url_for('routes.index') }}" class = "navbutton" style="text-decoration: none;">Home</a></li>
+                            <!-- <li><a href="{{ url_for('routes.qsort') }}" class = "navbutton"> qsort </a></li> -->
+                            <!-- <li><a href="{{ url_for('routes.situation_category') }}" class = "navbutton"> Survey</a></li> -->
+                            <!-- <li><a href="{{ url_for('auth.login')}}" class = "navbutton"> Login </a></li> -->
+                            <li><a href="{{ url_for('auth.logout')}}" class = "navbutton" style="text-decoration: none;"> Logout</a></li>
+
+                            <!-- add mindful logo -->
+                           <img src = "{{ url_for('static', filename = 'img//Mindful_logo_blue.png' )}}" alt = "nav_logo" class = "nav_logo">
+
+                           {%endif%}
+                     </ul>
+                  </nav>
+            </table>
+         </div>
+         
+         <div>
+               {% with messages = get_flashed_messages(with_categories=true) %}
+               {% if messages %}
+               {% for category, message in messages %}
+                  <div class="alert {{ category }}" style="width:290px" > {{ message|capitalize }} </div>
+               {% endfor %}
+               {% endif %}
+            {% endwith %}
+
+               {% block content %} {% endblock %}
+         </div>
+      </div>
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+         
+    </body>
+</html>

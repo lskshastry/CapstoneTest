@@ -1,0 +1,67 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<!-- font-family: 'Poppins', sans-serif;     regular -->{% extends "base.html" %}
+
+{% block content %}
+        <head>
+           
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<style>
+    /* change background color for only sign in page */
+    body {
+        background: #c3e0f5;
+        }
+
+    .forminput {
+        font-weight: 300;
+        font-family: Poppins;
+        }   
+</style>
+        </head>
+        {%if form%}
+        <body>
+            <div class = "signIn_container">
+                <ul>
+                    
+                    <img src = "{{ url_for('static', filename = 'img//Mindful_logo_orange.png' )}}" alt = "sign_in_logo" class = "sign_in_logo"
+                           width = 180px
+                            >
+
+                    <br></br>
+
+                    <form action= "" method="POST">
+                        {{form.hidden_tag()}}
+                            <p class= 'forminput'>{{form.username.label}}</p>
+                            <p>{{form.username(class= 'forminput')}}</p>
+        
+                            {% for error in form.username.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+        
+                            
+                            <p>{{form.password.label}}</p>
+                            <p>{{form.password(class= 'forminput')}}</p>
+        
+        
+                            {% for error in form.password.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                            
+                            <p>{{form.remember_me.label}}</p>
+                            <p>{{form.remember_me(class= 'forminput')}}</p>
+        
+                            <p>{{form.submit(class='button')}}</p>
+        
+                            <br></br>
+            
+                <!-- TODO: (milestone 3) Add the URL for user register route. --> 
+                    <p>New User? <a href="{{ url_for('auth.register')}}">Click to Register!</a></p>
+                    <p>New Admin User? <a href="{{ url_for('auth.registerAdmin')}}">Click to Register!</a></p>
+                </ul>
+            </div>
+            <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        </body>
+        {%endif%}
+{% endblock %}

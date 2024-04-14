@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="padding-inline-start: 15px;">User Qsort Entry</h1>
+<div style="padding-inline-start: 20px;">
+    {%if form%}
+        <form action=""method="POST">
+            {{form.hidden_tag()}}
+
+            <p> {{form.user_id.label}}</p>
+            <p>{{form.user_id(class='forminput')}}</p>
+
+            <p> {{form.choice.label}}</p>
+            <p>{{form.choice(class='forminput')}}</p>
+
+            <p> {{form.ifthenSignature.label}}</p>
+            <p>{{form.ifthenSignature(class='forminput' , style="width:250px; height:50px", spellcheck="true")}}</p>
+
+            <p> {{form.prototypicalSituation.label}}</p>
+            <p>{{form.prototypicalSituation(class='forminput', style="width:250px; height:50px", spellcheck="true")}}</p>
+
+            <p> {{form.situationList.label}}</p>
+            <p>{{form.situationList(class='forminput', style="width:250px; height:50px", spellcheck="true")}}</p>
+
+            <p> {{form.protoThought.label}}</p>
+            <p>{{form.protoThought(class='forminput',  style="width:250px; height:50px", spellcheck="true")}}</p>
+
+            <p> {{form.thought_pos.label}}</p>
+            <p> {{form.thought_pos}}</p>
+            <p> {{form.thought_neg.label}}</p>
+            <p> {{form.thought_neg}}</p>
+
+            <p> {{form.feelings_pos.label}}</p>
+            <p> {{form.feelings_pos}}</p>
+            <p> {{form.feelings_neg.label}}</p>
+            <p> {{form.feelings_neg}}</p>
+
+            <p> {{form.protoBehavior.label}}</p>
+            <p>{{form.protoBehavior(class='forminput' , style="width:250px; height:50px", spellcheck="true")}}</p>
+
+            <p> {{form.protoGoal.label}}</p>
+            <p>{{form.protoGoal(class='forminput', style="width:250px; height:50px", spellcheck="true")}}</p>
+
+            <p> {{form.behavior_mc.label}}</p>
+            <p> {{form.behavior_mc}}</p>
+
+            <p>{{form.submit(class='button')}}</p>
+            
+
+        </form>
+        
+    {%endif%}
+</div>
+{% endblock %}

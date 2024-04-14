@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 style="padding-inline-start: 15px;">Feelings</h1>
+
+    {% if form %}
+        
+            <form action="" method="post" >
+                {{ form.hidden_tag() }}
+                <div style="padding-inline-start: 20px;">
+                    Please check any of the following feelings that were occurring during or immediately after this event (you can check more than one group of feelings). Please check a group of feelings even if only one of the feelings in the group is true for you. For example, if you felt 'interested' but not 'intrigued' you would still check the box for that feeling category. If none of the feelings apply, you can leave blank.
+                    <br><br>
+                    {%if pos_neg == "True" %}
+
+                    {{form.feelings_pos}}
+                    {%else%}
+
+                    {{form.feelings_neg}}
+                    {%endif%}
+                  
+                {{ form.submit(class="button") }}
+              
+           
+            </form>
+            <form action="{{url_for('routes.thoughts',survey_id=survey_id, pos_neg=pos_neg, back=1)}}" method="post">
+                <input type="submit" value="back" class = "button" >
+            </form>
+        </div>
+
+           
+       
+    {% endif %}
+
+
+  {% endblock %}

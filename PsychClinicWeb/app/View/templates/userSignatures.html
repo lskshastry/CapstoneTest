@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Below are all the If Then Signatures for {{user.firstname}} {{user.lastname}} </h1>
+   <br>
+   
+    <ul> 
+
+        {% for s in signature %}
+
+        <!-- -  <b>{{s.ifThen}}</b> -->
+        -  <button><a href="{{ url_for('routes.ifThenSurveys',user_id = user.id, signature_id = s.id)}}" >{{s.ifThen}}</a></button>
+
+
+
+<br>
+<br>
+
+
+        {% endfor %}
+        <ul>
+
+{% endblock %}

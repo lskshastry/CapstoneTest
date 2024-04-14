@@ -1,0 +1,127 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+      <!-- font-family: 'Poppins', sans-serif;     light -->
+
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+      <!-- font-family: 'Poppins', sans-serif;     regular -->
+
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+      <!-- font-family: 'Poppins', sans-serif;     semibold -->
+
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+      <!-- font-family: 'Poppins', sans-serif;     bold -->
+
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+{% block content %}
+    <head>   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <div class = "reg_box">
+            <img src = "{{ url_for('static', filename = 'img//flowers.png' )}}" alt = "flower_art" class = "flower_art">
+        </div>
+    
+
+    <style type="text/css"> 
+
+        @media screen and (min-width: 1000px) 
+        {
+            h1
+            {
+                font-family: 'Poppins';
+                font-size: 45px;
+                font-weight: 600;
+            }
+        }
+
+        @media screen and (max-width: 1000px) 
+        {
+            h1
+            {
+                font-family: 'Poppins';
+                font-size: 35px;
+                font-weight: 600;
+            }
+        }
+
+        @media screen and (max-width: 800px) 
+        {
+            h1
+            {
+                font-family: 'Poppins';
+                font-size: 25px;
+                font-weight: 600;
+            }
+        }
+
+    </style>
+</head> 
+<body>
+    <div class = "reg_form_box">
+    <h1>Admin Registration</h1>
+    <br></br>
+
+
+   
+    {%if form%}
+        <form action=""method="POST">
+            {{form.hidden_tag()}}
+
+                <p>{{form.adminCode.label}}</p>
+                <p>{{form.adminCode(class='forminput')}}</p>
+
+                {%for error in form.adminCode.errors%}
+                <span style="color:red;">[{{error}}]</span>
+                {% endfor %}
+
+
+                <p>{{form.username.label}}</p>
+                <p>{{form.username(class='forminput')}}</p>
+
+                {%for error in form.username.errors%}
+                <span style="color:red;">[{{error}}]</span>
+                {% endfor %}
+
+                <p>{{form.firstname.label}}</p>
+                <p>{{form.firstname(class='forminput')}}</p>
+
+                {%for error in form.firstname.errors%}
+                <span style="color:red;">[{{error}}]</span>
+                {% endfor %}
+                <p>{{form.lastname.label}}</p>
+                <p>{{form.lastname(class='forminput')}}</p>
+
+                {%for error in form.lastname.errors%}
+                <span style="color:red;">[{{error}}]</span>
+                {% endfor %}
+                <p>{{form.email.label}}</p>
+                <p>{{form.email(class='forminput')}}</p>
+
+                {%for error in form.email.errors%}
+                <span style="color:red;">[{{error}}]</span>
+                {% endfor %}
+
+                <p>{{form.password.label}}</p>
+                <p>{{form.password(class='forminput')}}</p>
+
+                {%for error in form.password.errors%}
+                <span style="color:red;">[{{error}}]</span>
+                {% endfor %}
+
+                <p>{{form.password2.label}}</p>
+                <p>{{form.password2(class='forminput')}}</p>
+
+                {%for error in form.password2.errors%}
+                <span style="color:red;">[{{error}}]</span>
+                {% endfor %}
+
+
+                <p>{{form.submit(class='button')}}</p>
+        </form>
+    {%endif%}
+
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+</body>
+{% endblock %}

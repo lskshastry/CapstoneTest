@@ -1,0 +1,393 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+{% extends "base.html" %}
+
+
+{% block content %}
+    <html>
+    <head>
+        <style type="text/css">
+
+            @media screen and (max-width: 420px)
+            {
+
+                .heading
+                {
+                    margin-top: 15px;
+                    text-align: left;
+                    margin-left: 25px;
+                    position: relative;
+                    color: #006867;
+                    background-color: #ffffff;
+                    font-family: 'Poppins';
+                    font-size: 22px;
+                    display: relative;
+                    padding-right: 10%;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .heading::after
+                {
+                    content: '';
+                    display: block;
+                    width: 390px;
+                    height: 2.5px;
+                    background: #f78e1e;
+                    position: absolute;
+                    top: 50%;
+                    z-index: -2;
+                    float: left;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .subHead
+                {
+
+                    font-family: 'Poppins';
+                    margin: 15px;
+                    margin-left: 25px;
+                    text-align: left;
+                    font-size: 22px;
+                    color: #006867;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+
+                }
+            }
+
+            @media screen and (min-width: 421px) and (max-width: 650px)
+            {
+
+                .heading
+                {
+                    margin-top: 25px;
+                    text-align: left;
+                    margin-left: 25px;
+                    position: relative;
+                    color: #006867;
+                    background-color: #ffffff;
+                    font-family: 'Poppins';
+                    font-size: 22px;
+                    display: relative;
+                    padding-right: 10%;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .heading::after
+                {
+                    content: '';
+                    display: block;
+                    width: 1100px;
+                    height: 2.5px;
+                    background: #f78e1e;
+                    position: absolute;
+                    top: 50%;
+                    left: 55%;
+                    z-index: -2;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .subHead
+                {
+
+                    font-family: 'Poppins';
+                    margin: 25px;
+                    margin-left: 25px;
+                    text-align: left;
+                    font-size: 22px;
+                    color: #006867;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+
+                }
+
+            }
+
+            @media screen and (min-width: 651px) and (max-width: 900px)
+            {
+
+                .heading
+                {
+                    margin-top: 25px;
+                    text-align: left;
+                    margin-left: 25px;
+                    position: relative;
+                    color: #006867;
+                    background-color: #ffffff;
+                    font-family: 'Poppins';
+                    font-size: 28px;
+                    display: relative;
+                    padding-right: 10%;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .heading::after
+                {
+                    content: '';
+                    display: block;
+                    width: 1230px;
+                    height: 2.5px;
+                    background: #f78e1e;
+                    position: absolute;
+                    top: 50%;
+                    left: 55%;
+                    z-index: -2;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .subHead
+                {
+
+                    font-family: 'Poppins';
+                    margin: 25px;
+                    margin-left: 25px;
+                    text-align: left;
+                    font-size: 28px;
+                    color: #006867;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+
+                }
+
+            }
+
+
+
+            @media screen and (min-width: 901px)
+            {
+                .heading
+                {
+                    margin-top: 25px;
+                    text-align: left;
+                    margin-left: 25px;
+                    position: relative;
+                    color: #006867;
+                    background-color: #ffffff;
+                    font-family: 'Poppins';
+                    font-size: 30px;
+                    display: relative;
+                    padding-right: 10%;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .heading::after
+                {
+                    content: '';
+                    display: block;
+                    width: 1328px;
+                    height: 3.5px;
+                    background: #f78e1e;
+                    position: absolute;
+                    top: 50%;
+                    left: 55%;
+                    z-index: -2;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .subHead
+                {
+
+                    font-family: 'Poppins';
+                    margin: 25px;
+                    margin-left: 25px;
+                    text-align: left;
+                    font-size: 30px;
+                    color: #006867;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+
+                }
+            }
+            .ranking-scale {
+                text-align: center;
+                width: 85%;
+                padding-left: 40px;
+            }
+
+            .label {
+                font-size: 18px;
+                margin-right: 10px;
+            }
+
+            .number-line {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+
+            .tick {
+                width: 20px;
+                border-bottom: 2px solid #333;
+                padding-bottom: 5px;
+                font-size: 12px;
+            }
+
+            .descriptionContainer{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                padding-left: 10px;
+            }
+
+            .firstDescription {
+                text-align: left;
+                width: 20%;
+            }
+
+            .secondDescription {
+                text-align: left;
+                width: 20%;
+            }
+
+            .thirdDescription {
+                text-align: left;
+                width: 20%;
+            }
+
+            .vertical-numbers {
+                text-align: left;
+            }
+
+            ol {
+                list-style-type: none;
+                padding-inline-start: 20px;
+            }
+
+            li {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+
+            .number {
+                margin-right: 5px;
+            }
+            .sentence {
+
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+    <label class="heading">Person In Context Assessment</label>
+
+    <div style="padding-inline-start: 20px; width: 85%;">
+        <p>
+            <br>
+            <b>Instructions:</b> Please rate the extent to which each of your personality characteristics listed below are relevant to and influences how you think, feel, and behave in this situation.  If the personality characteristic has no influence on how you think, feel, and behave in this situation, you would select “0” for “Not relevant.”
+            <br>
+            <br>
+        </p>
+        <div class="ranking-scale">
+            <span class="label">Rank:</span>
+            <div class="number-line">
+                <div class="tick"> 0</div>
+                <div class="tick">1</div>
+                <div class="tick">2</div>
+                <div class="tick">3</div>
+                <div class="tick">4</div>
+                <div class="tick">5</div>
+                <div class="tick">6</div>
+                <div class="tick">7</div>
+                <div class="tick">8</div>
+                <div class="tick">9</div>
+                <div class="tick">10</div>
+            </div>
+        </div>
+        <br>
+        <div class = descriptionContainer>
+            <div class="firstDescription">
+                <p><b>Not relevant</b></p>
+                <p>Does not influence</p>
+                <p>how I think, feel, or behave</p>
+                <p>in this situation</p>
+            </div>
+
+            <div class="secondDescription">
+                <p><b>Somewhat relevant</b></p>
+                <p>Has some influence on</p>
+                <p>how I think, feel, or behave</p>
+                <p>in this situation</p>
+            </div>
+
+            <div class="thirdDescription">
+                <p><b>Very relevant</b></p>
+                <p>Strongly influences</p>
+                <p>how I think, feel, or behave</p>
+                <p>in this situation</p>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <p><b>My Personality Characteristic/Attribute Rating:</b></p>
+        <div class="vertical-numbers">
+            <ol>
+                <li>
+                    <span class="number">1.</span>
+                    <span class="sentence">This is the first personality characteristic.</span>
+                </li>
+                <li>
+                    <span class="number">2.</span>
+                    <span class="sentence">This is the second personality characteristic.</span>
+                </li>
+                <li>
+                    <span class="number">3.</span>
+                    <span class="sentence">This is the third personality characteristic.</span>
+
+                </li>
+                <li>
+                    <span class="number">4.</span>
+                    <span class="sentence">This is the fourth personality characteristic.</span>
+                </li>
+                <li>
+                    <span class="number">5.</span>
+                    <span class="sentence">This is the fifth personality characteristic.</span>
+                </li>
+                <li>
+                    <span class="number">6.</span>
+                    <span class="sentence">This is the sixth personality characteristic.</span>
+                </li>
+                <li>
+                    <span class="number">7.</span>
+                    <span class="sentence">This is the seventh personality characteristic.</span>
+                </li>
+                <li>
+                    <span class="number">8.</span>
+                    <span class="sentence">This is the eight personality characteristic.</span>
+                </li>
+                <li>
+                    <span class="number">9.</span>
+                    <span class="sentence">This is the ninth personality characteristic.</span>
+                </li>
+                <li>
+                    <span class="number">10.</span>
+                    <span class="sentence">This is the tenth personality characteristic.</span>
+                </li>
+            </ol>
+        </div>
+
+    </div>
+
+
+    </body>
+    </html>
+
+{% endblock %}

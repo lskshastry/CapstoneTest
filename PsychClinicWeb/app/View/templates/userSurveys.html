@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Below are the surveys for {{title}}</h1>
+   
+    <ul> 
+
+        {% for survey in surveys %}
+       
+        - <button><a href="{{ url_for('routes.surveyPost',survey_id=survey.id)}}" >  Survey - {{survey.timestamp.strftime('%B %d %Y')}}</a></button>
+        
+        <!-- {%if survey.timestamp.strftime('%B') == "January"%}
+       
+        {%endif%} -->
+<br>
+<br>
+        
+     
+        {% endfor %}
+        <ul>
+    
+{% endblock %}

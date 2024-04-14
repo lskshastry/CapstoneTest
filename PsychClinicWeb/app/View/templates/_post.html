@@ -1,0 +1,49 @@
+<table class = "posttable" style = "width:100%" valign="top">
+    <tr> 
+        <td colspan="3"><div class="posttitle">  {{ post.timestamp.strftime('%B %d %Y') }} - Survey </div>
+        </td>
+        
+    </tr>
+    
+    <tr>
+    
+
+        <td width="80%" style = "text-align:center" >
+            <div>
+            
+             <!-- {% if post.ifthensignature%}
+                    Analysis is Done
+            {% else %}
+                    Analysis is NOT Done
+             {%endif%} -->
+    
+
+  
+           </div>
+           <div> 
+             
+           </div> 
+        </td> 
+
+        
+    </tr>
+    
+    <tr> 
+        <td colspan="3" style = "text-align:center" valign="bottom">  
+            <br>
+           
+            <button><a href="{{ url_for('routes.surveyPost',survey_id=post.id)}}" >Look at survey</a></button>
+           
+
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="3" style = "text-align:center" valign="bottom">  
+            <br>
+            
+
+          </td>
+        </tr>
+    </tr>
+</table>

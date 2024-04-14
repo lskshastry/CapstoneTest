@@ -1,0 +1,94 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 style="padding-inline-start: 15px;">Sorting</h1>
+   
+
+    {% if form %}
+    
+        <div style="padding-inline-start: 20px;">
+            <form action="" method="post">
+                {{ form.hidden_tag() }}
+
+                {%if similarSurvey == "-1" %}
+                {%if pos_neg == "True" %}
+
+               <b> There don't appear to be any situations that you have entered so far that have similar pattern of thinking, feeling, and behaving. Below are all your positive categories. Please choose one of the options below if you want to use one of these categories for your journal entry. If not, create a new Situation Category: </b><br>
+            {%else%}
+               <b> Below are all your negative categories. Please choose one of the options below if you want to use one of these categories for your journal entry. If not. create a new Situation Category:</b> <br>
+            {%endif%}
+            <ul>
+                {% for s in allUserSignatures %}
+                <li>  <input type="checkbox" name="options2" id= s value="{{s}}"> {{s}} </input><br> </li>
+               
+                {% endfor %} 
+            </ul>
+                {{form2.newCategory.label}}<br>
+                {{form2.newCategory(class="formbody", style="width:250px; height:50px", spellcheck="true")}}<br><br>
+               
+                {{ form2.submit(class="button") }}
+                {%else%}
+
+
+                Based on your thoughts, feelings, behaviors, and what you were trying to do in this situation, this situation appears most similar to the following type of situation for you:  <br> <br>
+                "{{id}}" <br> <br>
+
+                Other Situations in this Category Include: <br>
+                <ul>
+                {% for sl in situationlist %}
+
+
+                <li>{{sl.situation}} </li> 
+                
+
+                {% endfor %}
+
+            </ul> 
+
+                {{form.choice.label}}
+                {{form.choice}}
+
+               <b> If false, please place this situation into one of the other similar categories below or create a new situation category for it or choose a category from the list of all categories. If you choose one of the existing situations below please write N/A in the new category text box.</b> <br>
+                <br>
+                Please choose one of the options below if you want to use one of these categories for your new situation entry:
+                <ul>
+                {% for s in allSimilar %}
+                <li>  <input type="checkbox" name="options" id= s value="{{s}}"> {{s}} </input><br> </li>
+               
+                {% endfor %} 
+            </ul>
+            {%if pos_neg == "True" %}
+
+                    Below are all your positive categories not listed above. Please choose one of the options below if you want to use one of these categories for your journal entry: <br>
+                {%else%}
+                    Below are all your negative categories not listed above. Please choose one of the options below if you want to use one of these categories for your journal entry: <br>
+                    {%endif%}
+
+                <ul>
+                    {% for s in allUserSignatures %}
+                    <li>  <input type="checkbox" name="options2" id= s value="{{s}}"> {{s}} </input><br> </li>
+                   
+                    {% endfor %} 
+                </ul>
+
+                {{form.newCategory.label}}<br>
+                {{form.newCategory}}
+                <br>
+
+                <br>
+                
+                {{ form.submit(class="button") }}
+                {%endif%}
+             </form>
+
+             <form action="{{url_for('routes.behavior',survey_id=survey_id, pos_neg=pos_neg, back=1)}}" method="post">
+                <input type="submit" value="back" class = "button" >
+                </form>
+        </div>
+    {% endif %}
+
+
+  {% endblock %}

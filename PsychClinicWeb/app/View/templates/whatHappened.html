@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 style="padding-inline-start: 15px;">What Happened?</h1><br>
+
+    {% if form %}
+        <!-- <div style="padding: 10px;"> -->
+            <form action="" method="post">
+                {{ form.hidden_tag() }}
+           
+                <div style="padding-inline-start: 20px;">
+                {{form.answer.label}}<br>
+                {{form.answer(class="formbody", style="width:250px; height:100px", spellcheck="true")}}<br><br>
+                {{ form.submit(class="button") }}
+            
+
+
+                
+            </form>
+        <!-- </div> -->
+            <!-- <form action="{{url_for('routes.situation_category',survey_id=survey_id, pos_neg=pos_neg, back=1)}}" method="post">
+                    <input type="submit" value="Back" class = "button" > -->
+            <!-- </form> -->
+            <form action="{{url_for('routes.situation_category',survey_id=survey_id, pos_neg=pos_neg, back=1)}}" method="post">
+                <input type="submit" value="back" class = "button" >
+            </form>
+
+        </div>
+        
+    {% endif %}
+
+
+  {% endblock %}

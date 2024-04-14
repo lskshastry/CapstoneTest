@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+    <div class="center"> 
+    <h3><div class="posttitle">  {{ time }} - Survey </div></h3>
+      <strong> Situation -</strong> {{post.situation}}<br><br>
+      <strong> What Happened? -</strong>  {{post.what_happened}}<br><br>
+      <strong>Thoughts: Meaning of Event - </strong>{{post.thoughts_meaning_of_event}}<br><br>
+      <strong> Thoughts: Summary - </strong> {{post.thoughts_summary}}<br><br>
+      <strong> Thoughts: MC - </strong>
+
+      <br>
+      {% for t in post.get_thoughtspos().all() %}
+      <span class="tagitem"> -{{t.name}}<br> </span>  
+    {%endfor%}
+
+
+    {% for t in post.get_thoughtsneg().all() %}
+    <span class="tagitem"> -{{t.name}}<br> </span>  
+  {%endfor%}
+        <br>
+
+      <strong>Feelings - </strong>
+    <br>
+
+      {% for t in post.get_feelingspos().all() %}
+      <span class="tagitem"> -{{t.name}} <br></span>  
+    {%endfor%}
+
+
+    {% for t in post.get_feelingsneg().all() %}
+    <span class="tagitem"> -{{t.name}}<br> </span>  
+  {%endfor%}
+        <br>
+
+  
+      <strong> Behaviors: Description -  </strong>{{post.behaviors_description}}<br><br>
+      <strong>Behaviors: Outcome -  </strong>{{post.behaviors_outcome}}<br><br>
+      <strong>Behaviors: MC - </strong><br>
+
+        {% for t in post.get_behaviors().all() %}
+        <span class="tagitem"> -{{t.name}} <br></span>  
+        {%endfor%}
+        <br>
+
+        <strong> If Then Signature -</strong> {{signature}}<br><br>
+
+
+
+</div>
+
+   
+
+
+  {% endblock %}

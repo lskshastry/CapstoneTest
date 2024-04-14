@@ -1,0 +1,255 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+{% extends "base.html" %}
+
+{% block content %}
+    <html>
+    <head>
+        <style type="text/css">
+
+            @media screen and (max-width: 420px)
+            {
+
+                .heading
+                {
+                    margin-top: 15px;
+                    text-align: left;
+                    margin-left: 25px;
+                    position: relative;
+                    color: #006867;
+                    background-color: #ffffff;
+                    font-family: 'Poppins';
+                    font-size: 22px;
+                    display: relative;
+                    padding-right: 10%;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .heading::after
+                {
+                    content: '';
+                    display: block;
+                    width: 390px;
+                    height: 2.5px;
+                    background: #f78e1e;
+                    position: absolute;
+                    top: 50%;
+                    z-index: -2;
+                    float: left;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .subHead
+                {
+
+                    font-family: 'Poppins';
+                    margin: 15px;
+                    margin-left: 25px;
+                    text-align: left;
+                    font-size: 22px;
+                    color: #006867;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+
+                }
+            }
+
+            @media screen and (min-width: 421px) and (max-width: 650px)
+            {
+
+                .heading
+                {
+                    margin-top: 25px;
+                    text-align: left;
+                    margin-left: 25px;
+                    position: relative;
+                    color: #006867;
+                    background-color: #ffffff;
+                    font-family: 'Poppins';
+                    font-size: 22px;
+                    display: relative;
+                    padding-right: 10%;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .heading::after
+                {
+                    content: '';
+                    display: block;
+                    width: 1100px;
+                    height: 2.5px;
+                    background: #f78e1e;
+                    position: absolute;
+                    top: 50%;
+                    left: 55%;
+                    z-index: -2;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .subHead
+                {
+
+                    font-family: 'Poppins';
+                    margin: 25px;
+                    margin-left: 25px;
+                    text-align: left;
+                    font-size: 22px;
+                    color: #006867;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+
+                }
+
+            }
+
+            @media screen and (min-width: 651px) and (max-width: 900px)
+            {
+
+                .heading
+                {
+                    margin-top: 25px;
+                    text-align: left;
+                    margin-left: 25px;
+                    position: relative;
+                    color: #006867;
+                    background-color: #ffffff;
+                    font-family: 'Poppins';
+                    font-size: 28px;
+                    display: relative;
+                    padding-right: 10%;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .heading::after
+                {
+                    content: '';
+                    display: block;
+                    width: 1230px;
+                    height: 2.5px;
+                    background: #f78e1e;
+                    position: absolute;
+                    top: 50%;
+                    left: 55%;
+                    z-index: -2;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .subHead
+                {
+
+                    font-family: 'Poppins';
+                    margin: 25px;
+                    margin-left: 25px;
+                    text-align: left;
+                    font-size: 28px;
+                    color: #006867;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+
+                }
+
+            }
+
+
+
+            @media screen and (min-width: 901px)
+            {
+                .heading
+                {
+                    margin-top: 25px;
+                    text-align: left;
+                    margin-left: 25px;
+                    position: relative;
+                    color: #006867;
+                    background-color: #ffffff;
+                    font-family: 'Poppins';
+                    font-size: 30px;
+                    display: relative;
+                    padding-right: 10%;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .heading::after
+                {
+                    content: '';
+                    display: block;
+                    width: 1328px;
+                    height: 3.5px;
+                    background: #f78e1e;
+                    position: absolute;
+                    top: 50%;
+                    left: 55%;
+                    z-index: -2;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+                }
+
+                .subHead
+                {
+
+                    font-family: 'Poppins';
+                    margin: 25px;
+                    margin-left: 25px;
+                    text-align: left;
+                    font-size: 30px;
+                    color: #006867;
+                    font-weight: 600;
+                    transition: all ease-in-out 500ms;
+                    animation: fadeIn 2s;
+
+                }
+            }
+
+        </style>
+    </head>
+
+<label class="heading">Information</label>
+    <div style="padding-inline-start: 20px; width: 85%;">
+        <p>
+            <br>
+           <b>Purpose of mobile application.</b>
+            This mobile app is a tool for recognizing the types of positive and negative situations you experience, and how you think, feel, and behave in those situations.
+            <br>
+            <br>
+            We believe that using this mobile app will help you cope better and help you to recognize your own personality strengths.
+            <br>
+            <br>
+            But another purpose of the app is to help you to recognize how your personality is expressed.  Rather than being expressed as average tendencies, research has shown that personality is expressed in “if-then personality signatures.”  For instance, rather than knowing your “average” level of extraversion, it is better to know which situations you are extraverted in (e.g., with a small group of close friends) and in which you may be more introverted (e.g., in a large classroom).
+            <br>
+            <br>
+            This mobile app will help you to identify both your positive and negative “if-then personality signatures:” For example, for one person, a positive if-then personality signature may be “if with Jane, a close friend, then I think I am accepted and liked, feel secure and close, and act by being myself and expressing my true, authentic thoughts.”   A negative if-then personality signature might be “if I am assigned a large demanding task, I think it will be too hard or not enjoyable, feel anxious, and act by procrastinating and doing something else to escape feeling uncomfortable.”  This mobile app is designed to help you recognize your own “personality if-then signatures.”
+            <br>
+            <br>
+            If you have completed the Person in Context Assessment (PICA), this mobile application can add to your findings.  You or your therapist may enter the PICA results into the mobile application by selecting the Enter PICA Results (If completed) icon.
+            <br>
+            <br>
+            <b>Instructions.</b> To get the most benefit from this mobile app, it is important that you notice any positive or negative emotional events that occur during the day.  Ideally, you would make two entries a day, one for the most positive experience you had during the day and one for the most negative/stressful experience.  But try to make as many entries as possible.
+            <br>
+            <br>
+            For any positive or negative emotional experience that occurs, select the “New Situation” icon.  You will then be asked whether the situation was a “mostly” positive or a “mostly” negative experience.
+            After you identify whether the event involved mostly positive or negative feelings, you be asked to briefly describe what happened in the situation.  Here you should describe the event in just one or two sentences, describing it as it might appear to an objective observer,  without inserting your interpretations, thoughts, feelings, etc..
+            <br>
+            <br>
+            Next you will be asked to describe your interpretation of what the situation meant to you, the thoughts that went through your mind during the situation.  Following this, you will be asked to identify what feelings you experienced in the situation as well as your behaviors.
+            <br>
+            <br>
+            The last step will have you consider whether this situation was similar to other situations you have experienced. The mobile application will suggest past situations that appear similar psychologically, that is similar in how you thought, felt, and behaved.  If the new situation is not similar to past situations in the mobile app, you can create a new situation category.
+        </p>
+    </div>
+    </body>
+    </html>
+
+    {% endblock %}

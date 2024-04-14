@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <style type="text/css"> 
+        .textBox {
+            width: 85%;
+            padding-inline-start: 20px;
+        }
+    </style>  
+
+    <h1 style="padding-inline-start: 15px;">Thoughts</h1>
+
+    {% if form %}
+    
+       
+            <form action="" method="post">
+                {{ form.hidden_tag() }}
+                <div style="padding-inline-start: 20px;">
+                    {{form.meaning_of_event.label}}<br><br>
+                    {{form.meaning_of_event(class="formbody", style="width:250px; height:100px", spellcheck="true")}}<br><br>
+                    Below are groups of statements that are meant to get at the same basic thought or idea. Please check any of the following thoughts that you had when this event happened (you can check more than one group of thoughts). Please check a group of thoughts even if only one of the thought statements in the group is true for you. For example, if you had the thought 'This is good' but you didn't have the thought 'this is great' you would still check the box for that group of thoughts even though only one of the thoughts in that group was true for you. If you didn’t have any of the thoughts listed below, you may leave blank.
+                    <br><br>
+                    {%if pos_neg == "True" %}
+
+                    {{form.thought_pos}}
+                    {%else%}
+
+                    {{form.thought_neg}}
+                    {%endif%}
+                  
+                {{ form.submit(class="button") }}
+           
+             </form>
+             <form action="{{url_for('routes.what_happened',survey_id=survey_id, pos_neg=pos_neg, back=1)}}" method="post">
+                <input type="submit" value="back" class = "button" >
+                </form>
+            </div>
+           
+       
+    {% endif %}
+
+
+  {% endblock %}

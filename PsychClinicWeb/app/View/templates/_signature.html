@@ -1,0 +1,47 @@
+
+
+<table class = "posttable" style = "width:100%" valign="top">
+    <tr> 
+        
+            <td colspan="3"><div class="posttitle">  {{ s.ifThen }}  </div>
+        </td>
+        
+    </tr>
+    
+    <tr>
+    
+
+        <td width="80%" style = "text-align:center" >
+            <div>
+            
+          
+    
+
+  
+           </div>
+           <div> 
+             
+           </div> 
+        </td> 
+
+        
+    </tr>
+    
+    <tr> 
+        <td colspan="3" style = "text-align:center" valign="bottom">  
+            <br>
+            <button><a href="{{ url_for('routes.ifThenSurveys',user_id = current_user.id, signature_id = s.id)}}" >Look at all surveys</a></button>
+           
+
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="3" style = "text-align:center" valign="bottom">  
+            <br>
+            
+
+          </td>
+        </tr>
+    </tr>
+</table>
