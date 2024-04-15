@@ -4,7 +4,7 @@ from flask_login import current_user
 from app.Model.models import Survey
 
 from openai import OpenAI
-api_key = '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'
+api_key = '***'
 
 client = OpenAI(api_key=api_key)
 
