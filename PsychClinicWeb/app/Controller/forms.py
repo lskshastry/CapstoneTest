@@ -153,10 +153,12 @@ class AdminQsortForm(FlaskForm):
 class SortingForm(FlaskForm):
     choice = RadioField('Do you agree that this situation seems to fit best in this situation category', choices=[('True','True'),('False','False')])
     newCategory = TextAreaField('New Situation Category (use a short phrase to label the new situation category, if you chose an option from above please enter "N/A")', validators=[DataRequired()])
+    existing_category = SelectField('Choose Existing Category', choices=[], validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 class SortingForm2(FlaskForm):
     newCategory = TextAreaField('New Situation Category (use a short phrase to label the new situation category, if you chose an option from above please enter "N/A")', validators=[DataRequired()])
+    existing_category = SelectField('Choose Existing Category', choices=[], validators=[DataRequired()])
     submit = SubmitField('Submit')
     
 

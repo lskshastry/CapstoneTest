@@ -5,46 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2b62a12-64c5-4889-801b-85673feb7017" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Controller/OpenAi.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/OpenAi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/auth_forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/auth_forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/auth_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/errors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controller/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controller/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/404error.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/404error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/500error.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/500error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/PICA.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/PICA.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/_signature.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/_signature.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/admin_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/admin_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/admin_reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/admin_reg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/admin_view_surveys.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/admin_view_surveys.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/behavior.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/behavior.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/feelings.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/feelings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/feelings_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/feelings_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/information.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/information.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/pastSituations.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/pastSituations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/qsort.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/qsort.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/sorting.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/sorting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/surveyPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/surveyPost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/thoughts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/thoughts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/userSignatures.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/userSignatures.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/userSurveys.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/userSurveys.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/templates/whatHappened.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/templates/whatHappened.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/psychclinic.py" beforeDir="false" afterPath="$PROJECT_DIR$/psychclinic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_routes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,22 +26,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "E:/Cpt_S 423/PsychClinicWeb/app/Controller/OpenAi.py",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "two.files.diff.last.used.file": "E:/Cpt_S 423/PsychClinicWeb/app/Controller/OpenAi.py",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Cpt_S 423/PsychClinicWeb/app/Controller/OpenAi.py&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;E:/Cpt_S 423/PsychClinicWeb/app/Controller/OpenAi.py&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="psychclinic" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.10" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/psychclinic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -100,7 +88,8 @@
       <workItem from="1714167946661" duration="2846000" />
       <workItem from="1714172337354" duration="270000" />
       <workItem from="1714497026120" duration="131000" />
-      <workItem from="1714497745236" duration="627000" />
+      <workItem from="1714497745236" duration="3179000" />
+      <workItem from="1714509831858" duration="6143000" />
     </task>
     <servers />
   </component>
@@ -108,10 +97,10 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/psychclinic_py$routes.coverage" NAME="routes Coverage Results" MODIFIED="1714168650791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/Controller" />
+    <SUITE FILE_PATH="coverage/psychclinic_py$routes.coverage" NAME="routes Coverage Results" MODIFIED="1714515933686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/Controller" />
     <SUITE FILE_PATH="coverage/PsychClinicWeb$psychclinic.coverage" NAME="psychclinic Coverage Results" MODIFIED="1714002709177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PsychClinicWeb$OpenAi.coverage" NAME="OpenAi Coverage Results" MODIFIED="1714004193738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/Controller" />
     <SUITE FILE_PATH="coverage/psychclinic_py$OpenAi.coverage" NAME="OpenAi Coverage Results" MODIFIED="1714148420669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/Controller" />
-    <SUITE FILE_PATH="coverage/psychclinic_py$psychclinic.coverage" NAME="psychclinic Coverage Results" MODIFIED="1714497048054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/psychclinic_py$psychclinic.coverage" NAME="psychclinic Coverage Results" MODIFIED="1714518059447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
