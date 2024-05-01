@@ -23,8 +23,10 @@ def analyze_entry(allSurveys, currentSurvey):
         ]
 
         messages = [
-            {"role": "system", "content": "Identify the survey most similar to the current one based on the provided options."},
-            {"role": "user", "content": f"Current survey options: {current_options}"}
+            {"role": "system",
+             "content": "Given the current survey and the other surveys, identify the most similar survey to the current one based on their respective options such as thoughts, feelings, and behaviors."},
+            {"role": "user",
+             "content": f"Current survey options:\nThoughts Positive: {currentSurvey.thoughts_pos}\nFeelings Positive: {currentSurvey.feelings_pos}\nBehaviors: {currentSurvey.behaviors_mc}\nThoughts Negative: {currentSurvey.thoughts_neg}\nFeelings Negative: {currentSurvey.feelings_neg}"}
         ]
 
         # Iterate through allSurveys and add each survey's options to messages
@@ -55,16 +57,15 @@ def analyze_entry(allSurveys, currentSurvey):
             # Access the first choice
             choice = response.choices[0]
 
-            # Verify if the choice has the expected attributes
-            if hasattr(choice, 'message'):
-                # Access the 'content' attribute of the message
+            # Make sure the choice contains a message with content
+            if hasattr(choice, 'message') and hasattr(choice.message, 'content'):
                 response_text = choice.message.content.strip()
                 print(f"Extracted response text: {response_text}")
 
-                # Use regex to extract the similar survey ID
-                match = re.search(r"The survey with ID ([a-z0-9]+)", response_text)
+                # Use the updated regular expression pattern to extract the similar survey ID
+                match = re.search(r"Survey ID (\S+)", response_text)
                 if match:
-                    similarSurvey = match.group(1)
+                    similarSurvey = match.group(1).strip()
                     print(f"Extracted similar survey ID: {similarSurvey}")
                 else:
                     print("Could not extract similar survey ID from response text")

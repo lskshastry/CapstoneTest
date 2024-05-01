@@ -309,78 +309,103 @@ def behavior(survey_id, pos_neg, back='0'):
                 behaviors_description=behaviorForm.description.data
             )
 
-        # Analyze similar surveys
         allSurveys = Survey.objects(user=current_user, signature__exists=True)
         similarSurvey = analyze_entry(allSurveys, unique_survey)
 
-        # Determine what value to pass for allSimilarList
-        # Provide a default value if you don't have one
-        allSimilarList = []
+        # Log the value of similarSurvey for debugging
+        print(f"Redirecting to sorting with similarSurvey: {similarSurvey}")
 
-        print(f"Proceeding to sorting with similarSurvey: {similarSurvey}")
-
-        # Flash message if similarSurvey is None
-        if similarSurvey is None:
-            flash("No surveys match your entries. You can add a new category for the survey on the sorting page.")
-            # Redirect to sorting page, set allSimilarList as an empty list or a placeholder
-            return redirect(url_for('routes.sorting', survey_id=unique_survey.id, pos_neg=pos_neg, back='0', similarSurvey=-1, allSimilarList=allSimilarList))
-
-        # Redirect to sorting page
-        return redirect(url_for('routes.sorting', survey_id=unique_survey.id, pos_neg=pos_neg, back='0', similarSurvey=similarSurvey, allSimilarList=allSimilarList))
+        return redirect(url_for('routes.sorting', survey_id=unique_survey.id, pos_neg=pos_neg, back='0', similarSurvey=similarSurvey))
 
     return render_template('behavior.html', form=behaviorForm, pos_neg=pos_neg, back=back, survey_id=survey_id)
 
-@bp_routes.route('/sorting/<survey_id>/<pos_neg>/<back>/<similarSurvey>/<allSimilarList>', methods=['GET', 'POST'])
+
+@bp_routes.route('/sorting/<survey_id>/<pos_neg>/<back>/<similarSurvey>', methods=['GET', 'POST'])
 @login_required
-def sorting(survey_id, pos_neg, back, similarSurvey, allSimilarList):
-    unique_survey = Survey.objects.filter(id=survey_id).first()
-    allUserSignatures = Signature.objects.filter(user=current_user.id).all()
+def sorting(survey_id, pos_neg, back, similarSurvey):
+    # Retrieve unique survey
+    unique_survey = Survey.objects(id=survey_id).first()
 
-    # Step 1: Integrate OpenAI code
-    # Obtain all surveys to compare against current survey
-    allSurveys = Survey.objects(user=current_user)
-    similarSurvey = analyze_entry(allSurveys, unique_survey)
+    # Initialize forms
+    form = SortingForm(request.form)
+    form2 = SortingForm2(request.form)
 
-    # Step 2: Use OpenAI response to set similarSurvey
-    # If analyze_entry returns a similar survey ID, update similarSurvey variable
+    # Initialize user signatures
+    allUserSignatures = Signature.objects(user=current_user).all()
+    user_signatures = [s.ifThen for s in allUserSignatures]
+
+    # Initialize situation list and all similar situations
+    situationlist = []
+    allSimilar = []
+
+    similar_survey = None
     if similarSurvey:
-        test = Survey.objects.filter(id=similarSurvey).first()
-        signature_id = test.signature.id
-        anotherthing = Signature.objects.filter(id=signature_id).first()
-        situationlist = SituationList.objects.filter(signature=anotherthing.id).all()
-    else:
-        test = None
-        anotherthing = None
-        situationlist = []
+        # Trim the similarSurvey ID and limit it to 24 characters
+        similarSurvey = similarSurvey.strip()[:24]  # Limit to 24 characters
 
-    # Step 3: Use the old logic for sorting and saving
-    sortform2 = SortingForm2()
-    sortingForm = SortingForm()
+        # Debug: Print the trimmed similarSurvey ID
+        print(f"Trimmed similarSurvey ID: {similarSurvey}")
 
-    # The rest of your old code logic goes here, handling form submissions, saving, and redirecting
-    # For example:
-    if sortingForm.validate_on_submit():
-        if sortingForm.choice.data == 'True':
-            # Handle when user agrees with the similar survey
-            if test:
-                unique_survey.signature = anotherthing
-                unique_survey.save()
-                new_situation = SituationList(signature=anotherthing, situation=unique_survey.what_happened)
-                new_situation.save()
+        # Verify if the trimmed ID is valid
+        if ObjectId.is_valid(similarSurvey):
+            # Query the database if the ID is valid
+            similar_survey = Survey.objects(id=ObjectId(similarSurvey)).first()
+            if not similar_survey:
+                print(f"Similar survey ID {similarSurvey} not found in the database.")
         else:
-            # Handle when user disagrees with the similar survey
-            option = request.form.getlist('options')
-            option2 = request.form.getlist('options2')
+            print(f"Invalid ObjectId: {similarSurvey}")
+            similar_survey = None
 
-            # Your existing logic for handling options, options2, and new category input
+        if similar_survey:
+            situationlist = SituationList.objects(signature=similar_survey.signature.id).all()
+            allSimilar = [situation.signature.ifThen for situation in situationlist]
 
+    # Debugging statements to verify the data
+    print(f"Unique survey: {unique_survey}")
+    print(f"Similar survey: {similar_survey}")
+    print(f"Situation list: {situationlist}")
+    print(f"All similar situations: {allSimilar}")
+
+    # Ensure unique_survey is available
+    if not unique_survey:
+        flash("Survey not found.")
         return redirect(url_for('routes.index'))
 
-    # Render the template as per your existing logic
-    return render_template('sorting.html', similarSurvey=similarSurvey, form=sortingForm, pos_neg=pos_neg, back=back,
-                           survey_id=survey_id, situationlist=situationlist, form2=sortform2,
-                           allUserSignatures=allUserSignatures, allSimilarList=allSimilarList)
+    # Handle form submission
+    if form.validate_on_submit():
+        # Process form data
+        choice = form.choice.data
 
+        # Set category based on form input
+        if choice is not None:
+            if choice == 'True':
+                unique_survey.category_name = form.new_category.data
+            else:
+                chosen_category = form.existing_category.data
+                unique_survey.category_name = chosen_category
+
+            try:
+                print("Saving the updated survey.")
+                unique_survey.save()
+                print("Survey saved successfully.")
+                # Redirect to the index page after saving the survey
+                return redirect(url_for('routes.index'))
+            except Exception as e:
+                print(f"Error saving survey: {e}")
+
+    # Render template and pass necessary data
+    return render_template(
+        'sorting.html',
+        survey_id=survey_id,
+        pos_neg=pos_neg,
+        back=back,
+        similarSurvey=similarSurvey,
+        form=form,
+        form2=form2,
+        allUserSignatures=user_signatures,
+        situationlist=situationlist,
+        allSimilar=allSimilar,
+    )
 
 def intersection(survey, currentSurvey):
     result = []
